@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kalkulator Waris Islam</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <link rel="stylesheet" href="./stylesWaris.css" />
+    </head>
+    <body>
+        <div class="container mt-4 mb-4 mt-md-5 mb-md-5">
+            <h1 class="text-center main-title">Kalkulator Waris Islam</h1>
+            <p class="text-center main-subtitle">Hitung pembagian harta warisan sesuai syariat Islam.</p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Kemajuan Pengisian Form"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        <div class="progress-bar" data-progress-text="0%"></div>
+                    </div>
+
+                    <form id="formWarisWizard">
+                        <div class="form-step active" id="step-1">
+                            <h5 class="step-title">Keturunan: Anak Laki-laki</h5>
+                            <div class="mb-3">
+                                <label for="jumlahAnakLaki" class="form-label"><i class="fas fa-male"></i>Jumlah Anak Laki-laki</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahAnakLaki"
+                                    name="jumlahAnakLaki"
+                                    value="0"
+                                    min="0"
+                                    required
+                                /><small class="form-text text-muted">Isi 0 jika tidak ada.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary" disabled><i class="fas fa-ban me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-2">
+                            <h5 class="step-title">Keturunan: Anak Perempuan</h5>
+                            <div class="mb-3">
+                                <label for="jumlahAnakPerempuan" class="form-label"
+                                    ><i class="fas fa-female"></i>Jumlah Anak Perempuan</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahAnakPerempuan"
+                                    name="jumlahAnakPerempuan"
+                                    value="0"
+                                    min="0"
+                                    required
+                                /><small class="form-text text-muted">Isi 0 jika tidak ada.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-3">
+                            <h5 class="step-title">Keturunan: Cucu (dari Anak Laki-laki)</h5>
+                            <div class="mb-3 conditional-group" id="cucuLakiGroup">
+                                <label for="jumlahCucuLaki" class="form-label"><i class="fas fa-child"></i>Jumlah Cucu Laki-laki</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahCucuLaki"
+                                    name="jumlahCucuLaki"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada Anak Laki-laki.</small>
+                            </div>
+                            <div class="mb-3 conditional-group" id="cucuPerempuanGroup">
+                                <label for="jumlahCucuPerempuan" class="form-label"
+                                    ><i class="fas fa-child" style="color: #e83e8c"></i>Jumlah Cucu Perempuan</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahCucuPerempuan"
+                                    name="jumlahCucuPerempuan"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada Anak Laki-laki.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-4">
+                            <h5 class="step-title">Garis Ayah: Ayah & Kakek</h5>
+                            <div class="mb-3">
+                                <label for="adaBapak" class="form-label"><i class="fas fa-user-tie"></i>Apakah Ayah Masih Hidup?</label
+                                ><select class="form-select" id="adaBapak" name="adaBapak" required>
+                                    <option value="tidak" selected>Tidak</option>
+                                    <option value="ya">Ya</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 conditional-group" id="kakekGroup">
+                                <label for="adaKakek" class="form-label"
+                                    ><i class="fas fa-user-clock"></i>Apakah Kakek (dari Ayah) Masih Hidup?</label
+                                ><select class="form-select" id="adaKakek" name="adaKakek">
+                                    <option value="tidak" selected>Tidak</option>
+                                    <option value="ya">Ya</option></select
+                                ><small class="form-text text-info">Hanya relevan jika Ayah tidak ada.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-5">
+                            <h5 class="step-title">Garis Ibu: Ibu & Nenek</h5>
+                            <div class="mb-3">
+                                <label for="adaIbu" class="form-label"
+                                    ><i class="fas fa-female" style="color: #e83e8c"></i>Apakah Ibu Masih Hidup?</label
+                                ><select class="form-select" id="adaIbu" name="adaIbu" required>
+                                    <option value="tidak" selected>Tidak</option>
+                                    <option value="ya">Ya</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 conditional-group" id="nenekIbuGroup">
+                                <label for="adaNenekIbu" class="form-label"
+                                    ><i class="fas fa-user-clock" style="color: #e83e8c"></i>Apakah Nenek (dari Ibu) Masih Hidup?</label
+                                ><select class="form-select" id="adaNenekIbu" name="adaNenekIbu">
+                                    <option value="tidak" selected>Tidak</option>
+                                    <option value="ya">Ya</option></select
+                                ><small class="form-text text-info">Hanya relevan jika Ibu tidak ada.</small>
+                            </div>
+                            <div class="mb-3 conditional-group" id="nenekAyahGroup">
+                                <label for="adaNenekAyah" class="form-label"
+                                    ><i class="fas fa-user-clock"></i>Apakah Nenek (dari Ayah) Masih Hidup?</label
+                                ><select class="form-select" id="adaNenekAyah" name="adaNenekAyah">
+                                    <option value="tidak" selected>Tidak</option>
+                                    <option value="ya">Ya</option></select
+                                ><small class="form-text text-info">Hanya relevan jika Ibu tidak ada.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-6">
+                            <h5 class="step-title">Pasangan (Suami/Istri)</h5>
+                            <div class="mb-3">
+                                <label for="jenisPasangan" class="form-label"><i class="fas fa-heart"></i>Apakah Ada Pasangan?</label
+                                ><select class="form-select" id="jenisPasangan" name="jenisPasangan" required>
+                                    <option value="tidak" selected>Tidak Ada Pasangan</option>
+                                    <option value="suami">Suami</option>
+                                    <option value="istri">Istri</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 conditional-group" id="jumlahIstriGroup">
+                                <label for="jumlahIstri" class="form-label"><i class="fas fa-users"></i>Jumlah Istri</label
+                                ><select class="form-select" id="jumlahIstri" name="jumlahIstri">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option></select
+                                ><small class="form-text text-info">Hanya relevan jika memilih Istri.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-7">
+                            <h5 class="step-title">Saudara Sekandung</h5>
+                            <div class="mb-3 conditional-group" id="saudaraKandungLakiGroup">
+                                <label for="jumlahSaudaraLakiKandung" class="form-label"
+                                    ><i class="fas fa-user-friends"></i>Jumlah Saudara Laki-laki Sekandung</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSaudaraLakiKandung"
+                                    name="jumlahSaudaraLakiKandung"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info"
+                                    >Hanya relevan jika tidak ada keturunan laki-laki & garis ayah laki-laki.</small
+                                >
+                            </div>
+                            <div class="mb-3 conditional-group" id="saudaraKandungPerempuanGroup">
+                                <label for="jumlahSaudaraPerempuanKandung" class="form-label"
+                                    ><i class="fas fa-user-friends" style="color: #e83e8c"></i>Jumlah Saudari Perempuan Sekandung</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSaudaraPerempuanKandung"
+                                    name="jumlahSaudaraPerempuanKandung"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info"
+                                    >Hanya relevan jika tidak ada keturunan laki-laki & garis ayah laki-laki.</small
+                                >
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-8">
+                            <h5 class="step-title">Saudara Sebapak</h5>
+                            <div class="mb-3 conditional-group" id="saudaraBapakLakiGroup">
+                                <label for="jumlahSaudaraLakiBapak" class="form-label"
+                                    ><i class="fas fa-user-tag"></i>Jumlah Saudara Laki-laki Sebapak</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSaudaraLakiBapak"
+                                    name="jumlahSaudaraLakiBapak"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada penghalang & Sdr Laki Kandung.</small>
+                            </div>
+                            <div class="mb-3 conditional-group" id="saudaraBapakPerempuanGroup">
+                                <label for="jumlahSaudaraPerempuanBapak" class="form-label"
+                                    ><i class="fas fa-user-tag" style="color: #e83e8c"></i>Jumlah Saudari Perempuan Sebapak</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSaudaraPerempuanBapak"
+                                    name="jumlahSaudaraPerempuanBapak"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info"
+                                    >Hanya relevan jika tdk terhalang & tdk ada Sdr Lk Kandung (atau tdk ada Sdr Lk Sebapak jk ada Sdr Pr
+                                    Kandung).</small
+                                >
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-9">
+                            <h5 class="step-title">Saudara Seibu</h5>
+                            <div class="mb-3 conditional-group" id="saudaraIbuLakiGroup">
+                                <label for="jumlahSaudaraLakiIbu" class="form-label"
+                                    ><i class="fas fa-users"></i>Jumlah Saudara Laki-laki Seibu</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSaudaraLakiIbu"
+                                    name="jumlahSaudaraLakiIbu"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada keturunan & garis ayah laki-laki.</small>
+                            </div>
+                            <div class="mb-3 conditional-group" id="saudaraIbuPerempuanGroup">
+                                <label for="jumlahSaudaraPerempuanIbu" class="form-label"
+                                    ><i class="fas fa-users" style="color: #e83e8c"></i>Jumlah Saudari Perempuan Seibu</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSaudaraPerempuanIbu"
+                                    name="jumlahSaudaraPerempuanIbu"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada keturunan & garis ayah laki-laki.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-10">
+                            <h5 class="step-title">Keponakan Laki-laki</h5>
+                            <div class="mb-3 conditional-group" id="keponakanKandungGroup">
+                                <label for="jumlahKeponakanLakiKandung" class="form-label"
+                                    ><i class="fas fa-sitemap"></i>Anak Laki dari Sdr Laki Sekandung</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahKeponakanLakiKandung"
+                                    name="jumlahKeponakanLakiKandung"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada penghalang & Sdr Laki Sebapak.</small>
+                            </div>
+                            <div class="mb-3 conditional-group" id="keponakanBapakGroup">
+                                <label for="jumlahKeponakanLakiBapak" class="form-label"
+                                    ><i class="fas fa-sitemap"></i>Anak Laki dari Sdr Laki Sebapak</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahKeponakanLakiBapak"
+                                    name="jumlahKeponakanLakiBapak"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info"
+                                    >Hanya relevan jika tidak ada penghalang & Anak Laki Sdr Laki Kandung.</small
+                                >
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-11">
+                            <h5 class="step-title">Paman (dari Ayah)</h5>
+                            <div class="mb-3 conditional-group" id="pamanKandungGroup">
+                                <label for="jumlahPamanKandung" class="form-label"
+                                    ><i class="fas fa-user-tie"></i>Paman Sekandung (Sdr Laki Ayah yg Sekandung dgn Kakek)</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahPamanKandung"
+                                    name="jumlahPamanKandung"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada penghalang & Keponakan.</small>
+                            </div>
+                            <div class="mb-3 conditional-group" id="pamanBapakGroup">
+                                <label for="jumlahPamanBapak" class="form-label"
+                                    ><i class="fas fa-user-tie"></i>Paman Sebapak (Sdr Laki Ayah yg Sebapak dgn Kakek)</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahPamanBapak"
+                                    name="jumlahPamanBapak"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada penghalang & Paman Kandung.</small>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-12">
+                            <h5 class="step-title">Sepupu Laki-laki (dari Paman)</h5>
+                            <div class="mb-3 conditional-group" id="sepupuKandungGroup">
+                                <label for="jumlahSepupuLakiKandung" class="form-label"
+                                    ><i class="fas fa-code-branch"></i>Anak Laki dari Paman Sekandung</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSepupuLakiKandung"
+                                    name="jumlahSepupuLakiKandung"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info">Hanya relevan jika tidak ada penghalang & Paman Sebapak.</small>
+                            </div>
+                            <div class="mb-3 conditional-group" id="sepupuBapakGroup">
+                                <label for="jumlahSepupuLakiBapak" class="form-label"
+                                    ><i class="fas fa-code-branch"></i>Anak Laki dari Paman Sebapak</label
+                                ><input
+                                    type="number"
+                                    class="form-control"
+                                    id="jumlahSepupuLakiBapak"
+                                    name="jumlahSepupuLakiBapak"
+                                    value="0"
+                                    min="0"
+                                /><small class="form-text text-info"
+                                    >Hanya relevan jika tidak ada penghalang & Anak Laki Paman Kandung.</small
+                                >
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="button" class="btn btn-primary next-btn">
+                                    <i class="fas fa-arrow-right me-1"></i> Berikutnya
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-13">
+                            <h5 class="step-title">Harta & Kewajiban</h5>
+                            <div class="mb-3 icon-input">
+                                <label for="totalHarta" class="form-label"><i class="fas fa-coins"></i>Jumlah Total Harta (Tirkah)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span
+                                    ><input
+                                        type="number"
+                                        class="form-control"
+                                        id="totalHarta"
+                                        name="totalHarta"
+                                        placeholder="Contoh: 500000000"
+                                        min="1"
+                                        required
+                                    />
+                                </div>
+                                <small class="form-text text-muted">Harta kotor sebelum dikurangi kewajiban.</small>
+                            </div>
+                            <div class="mb-3 icon-input">
+                                <label for="biayaPengurusan" class="form-label"
+                                    ><i class="fas fa-procedures"></i>Biaya Pengurusan Jenazah</label
+                                >
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span
+                                    ><input
+                                        type="number"
+                                        class="form-control"
+                                        id="biayaPengurusan"
+                                        name="biayaPengurusan"
+                                        value="0"
+                                        min="0"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="mb-3 icon-input">
+                                <label for="totalHutang" class="form-label"
+                                    ><i class="fas fa-file-invoice-dollar"></i>Total Hutang Pewaris</label
+                                >
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span
+                                    ><input
+                                        type="number"
+                                        class="form-control"
+                                        id="totalHutang"
+                                        name="totalHutang"
+                                        value="0"
+                                        min="0"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="mb-3 icon-input">
+                                <label for="wasiat" class="form-label"><i class="fas fa-scroll"></i>Wasiat (Maks. 1/3 Harta Bersih)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span
+                                    ><input type="number" class="form-control" id="wasiat" name="wasiat" value="0" min="0" required />
+                                </div>
+                            </div>
+                            <div class="alert alert-warning small">
+                                <i class="fas fa-exclamation-triangle me-2"></i><strong>Catatan:</strong> Form ini belum mencakup kasus
+                                waris yang sangat kompleks.
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary prev-btn">
+                                    <i class="fas fa-arrow-left me-1"></i> Sebelumnya</button
+                                ><button type="submit" class="btn btn-success">
+                                    <i class="fas fa-calculator me-1"></i> Hitung Warisan
+                                </button>
+                            </div>
+                            <div id="hasilKalkulasi" class="mt-4">
+                                <h4 class="text-center">Ringkasan Data & Hasil</h4>
+                                <hr />
+                                <pre id="detailPembagian">
+Hasil perhitungan akan muncul di sini setelah menekan tombol "Hitung Warisan".</pre
+                                >
+                                <p class="text-center text-danger mt-3 small">
+                                    <strong>Penting:</strong> Hasil perhitungan ini adalah simulasi berdasarkan pemahaman umum Faraid.
+                                    Sangat disarankan untuk berkonsultasi dengan ahli waris/ulama Faraid untuk kasus nyata.
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="./scriptWaris.js"></script>
+    </body>
+</html>
