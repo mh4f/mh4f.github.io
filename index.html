@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portofolio Anas Fadhlurrahman - Quantum Interface</title>
+        <meta
+            name="description"
+            content="Portofolio personal Anas Fadhlurrahman dengan desain futuristik modern, menampilkan proyek web development."
+        />
+
+        <link rel="icon" href="images/favicon.ico" sizes="any" />
+        <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="80">
+        <div id="particles-background"></div>
+        <div class="aurora-overlay"></div>
+        <nav class="navbar navbar-expand-lg fixed-top glassmorphism" id="mainNavbar">
+            <div class="container">
+                <a class="navbar-brand neon-text-logo" href="#hero">Anas</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <i class="fas fa-bars neon-text"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#hero">01. Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">02. Tentang</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">03. Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">04. Proyek</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">05. Kontak</a></li>
+                    </ul>
+                    <a
+                        href="resume/[nama-file-resume].pdf"
+                        target="_blank"
+                        class="btn btn-sm btn-outline-neon ms-lg-3 mt-3 mt-lg-0"
+                        rel="noopener noreferrer"
+                        >Resume</a
+                    >
+                </div>
+            </div>
+        </nav>
+
+        <main id="main-content">
+            <section id="hero" class="min-vh-100 d-flex align-items-center position-relative overflow-hidden">
+                <div id="particles-background"></div>
+                <div class="aurora-overlay"></div>
+
+                <div class="container hero-content position-relative">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 col-md-8">
+                            <p class="text-mono fs-6 text-neon mb-2 hero-element" data-reveal-delay="0.2">
+                                :: Halo, perkenalkan nama saya,
+                            </p>
+                            <h1 class="display-1 fw-bold text-light hero-element" data-splitting data-reveal-delay="0.4">
+                                Anas Fadhlurrahman
+                            </h1>
+                            <h2 class="display-5 fw-bold text-secondary hero-element" data-reveal-delay="0.6">
+                                Saya membangun masa depan web.
+                            </h2>
+                            <p class="lead text-secondary mt-4 mb-5 hero-element" style="max-width: 600px" data-reveal-delay="0.8">
+                                Saya seorang <span class="text-neon fw-medium">Sekretaris</span> dengan fokus pada
+                                <span id="typed-output" class="text-neon fw-medium"></span>
+                                <span class="typed-cursor">|</span>
+                                menciptakan antarmuka digital yang intuitif, performant, dan visual menawan.
+                            </p>
+                            <div class="hero-element" data-reveal-delay="1.0">
+                                <a href="#projects" class="btn btn-lg btn-neon-filled me-3"
+                                    >Lihat Proyek Saya <i class="fas fa-arrow-right ms-2"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-4 mt-5 mt-md-0 d-none d-md-block">
+                            <div class="hero-visuals position-relative">
+                                <div class="shape shape-1 glassmorphism"></div>
+                                <div class="shape shape-2"></div>
+                                <div class="shape shape-3"></div>
+                                <div class="shape shape-4 glassmorphism"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="hero-scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4 hero-element"
+                    data-reveal-delay="1.2"
+                >
+                    <i class="fas fa-chevron-down fa-2x text-neon"></i>
+                </div>
+            </section>
+
+            <section id="about" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">// 02. Tentang Saya <span class="title-line"></span></h2>
+                    <div class="row gx-lg-5 align-items-center">
+                        <div class="col-lg-7 mb-4 mb-lg-0 section-content" data-reveal>
+                            <p>
+                                Sejak kecil, saya terpukau oleh bagaimana teknologi, terutama web, dapat menghubungkan dunia dan mewujudkan
+                                ide-ide mustahil. Perjalanan saya sebagai developer dimulai pada [Tahun Mulai], didorong oleh rasa ingin
+                                tahu dan keinginan untuk berkontribusi dalam evolusi digital.
+                            </p>
+                            <p>
+                                Saya percaya pada kekuatan desain yang berpusat pada pengguna dan kode yang bersih dan efisien. Saya selalu
+                                antusias mempelajari teknologi baru dan mencari cara inovatif untuk memecahkan masalah. Saat ini, saya
+                                sangat tertarik pada [Sebutkan Area Ketertarikan Spesifik, misal: WebAssembly, AI dalam UI/UX, atau
+                                arsitektur serverless].
+                            </p>
+                            <p>
+                                Di luar dunia digital, saya adalah seorang [Sebutkan Hobi/Minat, misal: penikmat kopi, penggemar fiksi
+                                ilmiah, atau pecinta alam]. Keseimbangan ini membantu saya tetap kreatif dan berpikiran terbuka.
+                            </p>
+                            <p class="text-mono text-neon mt-4">// Tech stack utama saya:</p>
+                            <ul class="list-inline tech-stack-list">
+                                <li class="list-inline-item">HTML5</li>
+                                <li class="list-inline-item">CSS3</li>
+                                <li class="list-inline-item">JavaScript</li>
+                                <li class="list-inline-item">Bootstrap 5</li>
+                                <li class="list-inline-item">Node.js</li>
+                                <li class="list-inline-item">PHP</li>
+                                <li class="list-inline-item">Java</li>
+                                <li class="list-inline-item">Laravel</li>
+                                <li class="list-inline-item">CodeIgniter</li>
+                                <li class="list-inline-item">MySQL</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 section-visual" data-reveal data-reveal-delay="0.2">
+                            <div
+                                class="about-image-wrapper tilt-element"
+                                data-tilt
+                                data-tilt-max="8"
+                                data-tilt-perspective="1000"
+                                data-tilt-speed="400"
+                                data-tilt-glare
+                                data-tilt-max-glare="0.2"
+                            >
+                                <img src="./img/I.png" alt="Foto Profil Anas Fadhlurrahman" class="img-fluid rounded-3" />
+                                <div class="image-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">// 03. Keahlian Teknis <span class="title-line"></span></h2>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6 section-content" data-reveal>
+                            <div class="skill-card glassmorphism h-100 tilt-element" data-tilt data-tilt-max="5" data-tilt-speed="300">
+                                <div class="card-body text-center">
+                                    <div class="skill-icon mb-3"><i class="fas fa-desktop fa-3x text-neon"></i></div>
+                                    <h4 class="card-title fw-bold">Frontend</h4>
+                                    <p class="card-text">
+                                        Membangun antarmuka pengguna yang pixel-perfect, interaktif, dan sangat responsif.
+                                    </p>
+                                    <p class="text-mono fs-sm text-neon mt-3">// Fokus Utama:</p>
+                                    <p class="skill-list">HTML5, CSS3, JavaScript, Bootstrap 5, Tailwind CSS, GSAP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 section-content" data-reveal data-reveal-delay="0.15">
+                            <div class="skill-card glassmorphism h-100 tilt-element" data-tilt data-tilt-max="5" data-tilt-speed="300">
+                                <div class="card-body text-center">
+                                    <div class="skill-icon mb-3"><i class="fas fa-server fa-3x text-neon"></i></div>
+                                    <h4 class="card-title fw-bold">Backend</h4>
+                                    <p class="card-text">
+                                        Merancang API yang tangguh, mengelola data, dan memastikan performa sisi server.
+                                    </p>
+                                    <p class="text-mono fs-sm text-neon mt-3">// Fokus Utama:</p>
+                                    <p class="skill-list">Node.js (Express, NestJS), PHP, Laravel, CodeIgniter, MongoDB,MySQL, REST API</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 section-content" data-reveal data-reveal-delay="0.3">
+                            <div class="skill-card glassmorphism h-100 tilt-element" data-tilt data-tilt-max="5" data-tilt-speed="300">
+                                <div class="card-body text-center">
+                                    <div class="skill-icon mb-3"><i class="fas fa-tools fa-3x text-neon"></i></div>
+                                    <h4 class="card-title fw-bold">Tools & Workflow</h4>
+                                    <p class="card-text">Menggunakan tools modern untuk efisiensi, kolaborasi, dan deployment.</p>
+                                    <p class="text-mono fs-sm text-neon mt-3">// Fokus Utama:</p>
+                                    <p class="skill-list">Git, GitHub Actions, Canva, Figma</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">// 04. Proyek Unggulan <span class="title-line"></span></h2>
+                    <div class="row g-4">
+                        <div class="col-lg-6 section-content" data-reveal>
+                            <div class="project-card glassmorphism h-100 tilt-element" data-tilt>
+                                <div class="project-image-wrapper">
+                                    <img src="./img/Project (2).png" alt="Kalkulator Waris" class="project-image" />
+                                    <div class="project-image-overlay"></div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-mono fs-sm text-neon mb-1">Web Application</p>
+                                    <h4 class="card-title fw-bold mb-2">Kalkulator Waris</h4>
+                                    <div class="project-description mb-3">
+                                        <p>
+                                            Merupakan kalkulator untuk menghitung dengan mudah bagian setiap ahli waris dalam menerima harta
+                                            warisan sesuai dengan ajaran dan tuntunan syari'at islam, Dengan dalil - dalil yang shahih serta
+                                            pemahaman para Salafus Shalih.
+                                        </p>
+                                    </div>
+                                    <ul class="list-inline project-tags text-mono fs-sm mb-3">
+                                        <li class="list-inline-item">HTML</li>
+                                        <li class="list-inline-item">CSS</li>
+                                        <li class="list-inline-item">JavaScript</li>
+                                        <li class="list-inline-item">bootstrap 5</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="#" target="_blank" rel="noopener noreferrer" class="icon-link me-3" aria-label="GitHub"
+                                            ><i class="fab fa-github"></i
+                                        ></a>
+                                        <a
+                                            href="./Waris/index.html"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="icon-link"
+                                            aria-label="Live Demo"
+                                            ><i class="fas fa-external-link-alt"></i
+                                        ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 section-content" data-reveal data-reveal-delay="0.15">
+                            <div class="project-card glassmorphism h-100 tilt-element" data-tilt>
+                                <div class="project-image-wrapper">
+                                    <img src="./img/Project (1).png" alt="Landing Page" class="project-image" />
+                                    <div class="project-image-overlay"></div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-mono fs-sm text-neon mb-1">New Experience</p>
+                                    <h4 class="card-title fw-bold mb-2">Landing Page</h4>
+                                    <div class="project-description mb-3">
+                                        <p>
+                                            Menawarkan sebuah produk Moka Pot bermerek Réveil yang hadir untuk menambah sensasi mahal dalam
+                                            membuat kopi, sehingga kopi rumahan dapat terasa layaknya kopi mewah.
+                                        </p>
+                                    </div>
+                                    <ul class="list-inline project-tags text-mono fs-sm mb-3">
+                                        <li class="list-inline-item">HTML</li>
+                                        <li class="list-inline-item">CSS</li>
+                                        <li class="list-inline-item">JavaScript</li>
+                                        <li class="list-inline-item">Canva</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="#" target="_blank" rel="noopener noreferrer" class="icon-link me-3" aria-label="GitHub"
+                                            ><i class="fab fa-github"></i
+                                        ></a>
+                                        <a
+                                            href="https://mh4f-landing-page.my.canva.site"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="icon-link"
+                                            aria-label="Live Demo"
+                                            ><i class="fas fa-external-link-alt"></i
+                                        ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 section-content" data-reveal>
+                        <a
+                            href="https://github.com/mh4f?tab=repositories"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-neon"
+                            >Lihat Lebih Banyak di GitHub</a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section-padding">
+                <div class="container text-center">
+                    <p class="text-mono fs-5 text-neon mb-2 section-content" data-reveal>// 05. Kontak</p>
+                    <h2 class="display-4 fw-bold mb-3 text-light section-content" data-reveal data-reveal-delay="0.1">Mari Terhubung</h2>
+                    <p
+                        class="lead text-secondary mb-5 mx-auto section-content"
+                        style="max-width: 600px"
+                        data-reveal
+                        data-reveal-delay="0.2"
+                    >
+                        Saya selalu terbuka untuk diskusi, kolaborasi, atau sekadar bertukar ide. Jangan ragu untuk menghubungi saya!
+                    </p>
+                    <div class="section-content" data-reveal data-reveal-delay="0.3">
+                        <a href="mailto:mh4f123@gmail.com" class="btn btn-lg btn-neon-filled">
+                            Kirim Email <i class="fas fa-paper-plane ms-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="social-links-contact mt-5 pt-4 section-content" data-reveal data-reveal-delay="0.4">
+                        <a
+                            href="https://wa.me/62895800299779"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-icon mx-2"
+                            aria-label="WhatsApp"
+                            ><i class="fab fa-whatsapp fa-lg"></i
+                        ></a>
+                        <a
+                            href="https://www.instagram.com/fadh.imi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-icon mx-2"
+                            aria-label="Instagram"
+                            ><i class="fab fa-instagram fa-lg"></i
+                        ></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="text-center py-4 mt-5">
+            <div class="container">
+                <p class="text-mono fs-sm text-secondary mb-0">
+                    Dirancang & Dibangun oleh Anas Fadhlurrahman &copy; <span id="current-year"></span>
+                </p>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+            integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+            integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+        <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.4.0/tsparticles.bundle.min.js"></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+            integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLZwYKLtSSNjp7SYE/JU㔹D74NvtMoRaCbHwvHM3MEzpAbweETHZGhmTiQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+
+        <script src="script.js"></script>
+    </body>
+</html>
